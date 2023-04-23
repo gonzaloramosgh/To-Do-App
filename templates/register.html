@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div id="reg-head">
+    <header class="hea" > CREATE USER </header>
+    <a class="home" href="{{ url_for('login') }}">HOME</a>
+</div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+<div>
+    <form action="{{ url_for('register') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <ul class="reg-form">
+            <li><label for="name">FULL NAME</label></li>
+            <input id="name" type="text" name="name"  placeholder="Insert Name" required>
+            <li><label for="email" >EMAIL</label></li>
+            <input id="email" type="email" name="email"  placeholder="Insert Email" required>
+            <li><label for="passwd" >PASSWORD</label></li>
+            <input id="passwd" type="text" name="password"  placeholder="Insert Password" required>
+        </ul>
+        <br>
+        <button class="mi-boton" type="submit">REGISTER USER</button>
+    </form>
+</div>
+<div id="relleno">
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% if current_user.is_authenticated %}
+
+<div id="head">
+    <div class="sub-head">
+      <h1> Hi {{ current_user.name }} ! </h1>
+      <a class="mi-boton" href="{{ url_for('logout') }}"><strong>LOGOUT</strong></a>
+    </div>
+</div>
+{% endif %}
+
+<!------------------------------------------------------------------------------------->
+
+<div id="container">
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p id="alert">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+  <div id="left-column">
+      <h2>My Profile</h2>
+      <p>{{ current_user.name }}</p>
+      <p>{{ current_user.email }}</p>
+      <form action="{{ url_for('deleteuser') }}" method="post"><button type="submit">Delete User</button>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      </form>
+  </div>
+
+  <div id="right-column">
+              {% if posts %}
+              {% for posteo in posts %}
+      <div id="posts">
+          <form action="{{ url_for('delete') }}" method="post">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <input name="postid" value="{{ posteo.id }}" type="hidden">
+              <p id="data">date: {{ posteo.date }}</p>
+              <h2>{{ posteo.title.title() }} </h2>
+              <p id="post-text">{{ posteo.text.capitalize() }}</p>
+              <button class="mi-boton-del" type="submit" >Delete Task</button>
+
+          </form>
+      </div>
+      {% endfor %}
+      {% else %}
+    <h3>Nothing To-Do </h3>
+    {% endif %}
+  </div>
+
+
+  <div id="content">
+      <form action="{{ url_for('createTask') }}" method="post">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <ul class="lista">
+              <li><h1>Add something To-Do</h1></li>
+              <li><h2>Title</h2></li>
+              <li><input name="title" placeholder="Insert title" required></li>
+              <br>
+              <li><textarea name="cont" placeholder="Your new task" required></textarea></li>
+              <br>
+              <li><button class="mi-boton" type="submit" >Create Task</button> </li>
+          </ul>
+      </form>
+  </div>
+
+
+</div>
+
+
+<div id="relleno"></div>
+
+<br>
+
+{% endblock %}

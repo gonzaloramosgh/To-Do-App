@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<div id="log-head">
+</div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p id="alert">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+<div>
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <ul class="reg-form">
+            <li><label for="email">EMAIL</label></li>
+            <input  id="email" type="email" name="email"  placeholder="Insert Email" value="" >
+            <li><label for="password">PASSWORD</label></li>
+            <input id="password" type="password" name="password"  placeholder="Insert Password" value="">
+        </ul>
+        <button class="mi-boton" type="submit">Log-In</button>
+    </form>
+</div>
+<br>
+
+<a  href="{{ url_for('register') }}" >¿New User? Register</a>
+
+<div id="relleno">
+
+
+</div>
+
+{% endblock %}

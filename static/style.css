@@ -1,0 +1,214 @@
+body {
+  background: linear-gradient(to bottom,#1f8673, #bfefff);
+}
+
+#log-head{
+font:Comic Sans;
+}
+
+ul{
+list-style: none;
+}
+
+#reg-head {
+color:red;
+display:flex;
+padding:10px;
+margin:auto;
+font-size:25px;
+justify-content:space-between;
+}
+
+
+#head {
+  margin:10px;
+  padding:auto;
+}
+
+.sub-head {
+  margin:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CONTENEDOR DE LAS COLUMNAS */
+
+#container {
+  margin:10px;
+  padding:auto;
+  width: auto;
+  height:auto;
+  border-radius: 10px;
+  display: flex;
+}
+
+/*             COLUMNAS                */
+
+  /*            MIS DATOS             */
+
+#left-column {
+  border-radius: 10px;
+  width: 25%;
+ /*  background-color: #eee; */
+  padding: 10px;
+}
+
+
+/*             MIS TAREAS                  */
+
+#right-column {
+  border-radius: 10px;
+  width: 35%;
+  padding: 15px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+#right-column h1{
+  font-size:30px;
+  color:black;
+}
+
+#posts{
+    display:inline-block;
+    width:75%;
+    border: 3px solid #1f8673;
+    border-radius:25px;
+    word-wrap: break-word;
+    padding:20px;
+    padding-top:0px;
+    padding-bottom:25px;
+    margin:0px;
+    margin-bottom:10px;
+}
+
+#posts h2{
+color:red;
+}
+
+#posts p{
+color:black;
+}
+
+#post-text
+{
+font-size:18px;
+word-spacing:3px;
+line-height:22px;
+background-color:none;
+}
+
+/*    ELIMINAR TAREA BOTON.   */
+
+.mi-boton-del{
+background-color: #4CAF50;
+}
+
+.mi-boton-del:hover {
+  background-color: #3e8e41;
+}
+
+
+/*          AGREGAR TAREA                  */
+
+#content {
+  display:inline-flex;
+  text-align:center;
+  width:100%;
+  height:50hv;
+  flex:1;
+  border-radius: 10px;
+  list-style-type: none;
+  padding:10px;
+}
+
+#content h1{
+font-size:30px;
+}
+
+
+#content input{
+font-size:25px;
+}
+
+#content textarea{
+  width: 350px;
+  height: 250px;
+  font-size:16px;
+
+}
+
+.lista{
+  list-style-type: none;
+}
+
+.mi-boton {
+  /* display: inline-block; */
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.mi-boton:hover {
+  background-color: #3e8e41;
+}
+
+
+
+/********************* FIN COLUMNAS     ************************/
+
+
+/***************************  PARTE FINAL DE LA PAGINA  "ESTA VACIO""   ******************************/
+#relleno {
+  margin:10px;
+  width: auto;
+  height:200px;
+  border-radius: 10px;
+  display: flex;
+  background: linear-gradient(to center,#1f8673,#bfefff)
+}
+
+
+.sub-head a{
+  display: inline-block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/*          FOOTER                      */
+
+
+#pie{
+  font-size:10px;
+  flex:1;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#alert{
+color:red;
+}
+
+.reg-form li{
+padding:10px;
+font-size:25px;
+}
+
+.reg-form input{
+font-size:20px;
+height:25px;
+width:auto;
+}
+
