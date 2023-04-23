@@ -26,3 +26,40 @@ Users can remove their account from the app. When you delete an account, all tas
 Install necessary packages in the detailed versions, they are in requirements.txt
 
 >> pip install -r requirements.txt
+
+
+
+/////// VERSION EN ESPAÑOL   ////////////////////////
+
+
+Proyecto Flask To-Do List
+Este proyecto es una aplicación web desarrollada con Flask, que utiliza varias extensiones de Flask, incluyendo Flask-Login, Flask-WTF, Flask-MySQL .
+
+La aplicación es un sistema de lista de tareas por hacer, donde cada usuario puede crear y administrar su propia lista personal de tareas. El sistema también incluye un sistema de autenticación de usuarios y la capacidad de eliminar usuarios de la base de datos.
+
+Configuración:
+Para ejecutar este proyecto, primero debe instalar las dependencias requeridas, que se encuentran en el archivo requirements.txt. Puede instalarlos usando el siguiente comando:
+
+Luego, debe configurar la base de datos MySQL en el archivo config.py. Puede modificar la configuración de la base de datos en este archivo.
+
+
+Funcionalidades:
+Sistema de autenticación
+La aplicación incluye un sistema de autenticación de usuarios. Los usuarios pueden iniciar sesión o crear una nueva cuenta si no tienen una. La autenticación se realiza utilizando la extensión Flask-Login.
+
+Creación de usuarios:
+Los usuarios pueden crear una nueva cuenta en la aplicación. La información del usuario se almacena en la base de datos MySQL utilizando la extensión Flask-MySQL.
+
+Lista de tareas:
+Cada usuario tiene su propia lista de tareas por hacer. Cuando un usuario inicia sesión, se le redirige a su lista de tareas personal. Los usuarios pueden crear nuevas tareas, editar tareas existentes y eliminar tareas. La lista de tareas se almacena en la base de datos MySQL utilizando la extensión Flask-MySQL.
+
+Eliminación de usuarios:
+Los usuarios pueden eliminar su cuenta de la aplicación. Al eliminar una cuenta, también se eliminan todas las tareas asociadas con la cuenta.
+
+
+Las librerias necesarias para ejecutar correctamente la app se encuentran en requirements.txt
+Instalarlas ejecutando el siguiente comando.
+
+>> pip install -r requirements.txt
+
+
